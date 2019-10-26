@@ -32,6 +32,8 @@ if (isset($_POST["submit"])) {
     $FoutAccount = Login($username , $password) ;
     if($FoutAccount){
         $_SESSION['AdminName'] = $FoutAccount['name'] ;
+        $_SESSION['Username'] = $FoutAccount['username'] ;
+
         $_SESSION['SuccessMessage'] = "welcome " .$_SESSION['AdminName'];
     
          if(isset($_SESSION['TrakingUrl'])){
@@ -40,7 +42,7 @@ if (isset($_POST["submit"])) {
          }
          else {
             Redirect_to("Dashboard.php");
-            echo  "hello". $_SESSION['TrakingUrl'] ;
+            //echo  "hello". $_SESSION['TrakingUrl'] ;
          }
     }
      else {

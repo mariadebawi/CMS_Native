@@ -67,8 +67,10 @@ function Login($username , $password){
   $stmt->execute() ;
   $Result = $stmt->rowCount() ;
     if($Result == 1) {
-       return $FoutAccount = $stmt->fetch() ;
+      $FoutAccount = $stmt->fetch() ;
+       return $FoutAccount ;
       } 
+
     else {
        return null ;
     }
