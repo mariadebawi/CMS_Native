@@ -72,17 +72,6 @@ ConfirmLogin();
     <div class="navdivider"></div>
     <!-- end Navbar-->
 
-
-
-
-
-
-
-
-
-
-
-
     <!-- Header-->
     <div class="container">
         <div class="row mt-4">
@@ -227,7 +216,7 @@ ConfirmLogin();
                    </div>
                    <div class="card-body">
                      <button class="btn btn-success btn-block text-center text-white mb-4">Join the Forum</button>
-                     <button class="btn btn-danger btn-block text-center text-white mb-4">Login</button>
+                     <button class="btn btn-danger btn-block text-center text-white mb-4" >Login</button>
                        <div class="input-group mb-3">
                           <input class="form-control " type="email" placeholder="Enter your email" name="email">
                           <div class="input-group-append">

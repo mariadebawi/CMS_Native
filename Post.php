@@ -12,6 +12,30 @@ $_SESSION['TrakingUrl'] = $_SERVER['PHP_SELF'];
 
 ConfirmLogin();
 
+
+if (isset($_POST['delete'])) {
+
+    $id = $_POST['deleteID'];
+
+
+    $sql = "DELETE  from post WHERE id = '$id'";
+    $excute = $ConnectingDb->query($sql);
+
+
+    if ($excute) {
+
+        $_SESSION['SuccessMessage'] = "post deleted with successfully";
+        Redirect_to("post.php");
+    }
+    if ($excute) {
+        $_SESSION['ErrorMessage'] = "You have a problem , Try Again ";
+        Redirect_to("post.php");
+    }
+}
+
+
+
+
 ?>
 
 
