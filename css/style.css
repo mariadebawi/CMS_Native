@@ -1,0 +1,35 @@
+.navdivider {
+    height: 10px;
+    background-color: #27aae1;
+}
+
+header svg {
+    color: #27aae1;
+}
+
+.col-offset-lg-1.col-md-10 {
+    min-height: 200px;
+}
+
+.fieldInfo {
+    color: rgb(251, 174, 44);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+
+h1.fieldInfo {
+    font-size: 1.8em;
+}
+
+.CommentBlock {
+    background: #f6f7f9;
+}
+
+#show {
+    position: absolute;
+    right: 9px;
+    top: 48px;
+    z-index: 40;
+    color: rgb(251, 174, 44);
+    cursor: pointer;
+}
