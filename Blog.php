@@ -115,7 +115,15 @@ ConfirmLogin();
                     }
                     $sql = "SELECT * from post ORDER BY id DESC LIMIT $ShowPostFrom,4";
                     $stmt = $ConnectingDb->query($sql);
-                } else {
+                }
+                elseif(isset($_GET['category'])){ 
+                    $categoryPost = $_GET['category'];
+                    //echo $categoryPost ;
+                    $sql = " SELECT * from post WHERE category = '$categoryPost' ORDER BY id DESC ;";
+                    $stmt = $ConnectingDb->query($sql);
+                }
+                
+                else {
                     $sql = "SELECT * from post ORDER BY id DESC LIMIT 0,3 ";
                     $stmt = $ConnectingDb->query($sql);
                 }
@@ -129,8 +137,6 @@ ConfirmLogin();
                         $image = $DataRows['image'];
                         $PostText = $DataRows['post'];
                         $dateTime = $DataRows['dateTime'];
-
-
                         ?>
                         <div class="card my-3">
                             <img src="upload/<?php echo $image ?> " style="max-height: 450px" class="img-fluid card-img-top" />
@@ -222,6 +228,29 @@ ConfirmLogin();
                    <div class="card-body">
                      <button class="btn btn-success btn-block text-center text-white mb-4">Join the Forum</button>
                      <button class="btn btn-danger btn-block text-center text-white mb-4">Login</button>
+                       <div class="input-group mb-3">
+                          <input class="form-control " type="email" placeholder="Enter your email" name="email">
+                          <div class="input-group-append">
+                              <button type="button" class="btn btn-primary btn-sm text-center text-white d-block" name="button">Subscribe Now</button>
+                          </div>                
+                       </div>                     
+                   </div>
+               </div>
+               <div class="card mb-4">
+                   <div class="card-header bg-primary text-light">
+                       <h2 class="lead">Categories</h2>                     
+                   </div>
+                   <div class="card-body">
+                    <?php
+                      global $ConnectingDb;
+                      $sql = "SELECT * from category ORDER BY id DESC";
+                      $stmt = $ConnectingDb->query($sql);
+                         while ($DataRows = $stmt->fetch()) {
+                            $categoryId = $DataRows['id'];
+                            $title = $DataRows['title'];
+                     ?>  
+                     <a href="blog.php?category=<?php echo $title ?>"><span class="text-uppercase heading"><?php echo $title ?></span></a> <br>     
+                     <?php } ?>           
                    </div>
                </div>
             </div>
